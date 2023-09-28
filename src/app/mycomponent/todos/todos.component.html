@@ -1,0 +1,19 @@
+<!-- <p>todos works!</p> -->
+<!-- *ngFor is  attribute which turns html a loop, done by javascript angular -->
+
+<div class="container align-center" style="border: 6px double black; margin: 4em 8rem 6rem 14rem; padding: 2rem 3rem 3rem 3rem; border-radius: 20px; width: 55rem; background-image: repeating-linear-gradient(rgba(105, 9, 9, 0.801), aliceblue, rgba(28, 28, 180, 0.818),beige, green);">
+    <h1 class="text-center my-4" ><u>To-Do List</u></h1>
+<app-add-todo (Todoadd)="Todoadd($event)" ></app-add-todo>
+
+<div class="container">
+<h4 class="ml-10">your Todo</h4>
+<div *ngIf="this.todos.length ===0; else elseBlock">No todos to display</div>
+<ng-template #elseBlock> <h5 class="text-secondary">Pending Deeds</h5></ng-template>
+<div *ngFor ="let todo of todos">
+    <!-- <li> {{todo.sno}} - {{todo.title}} - {{todo.desc}}</li> -->
+    <app-todo-app [todo] = "todo" (todoDelete) = "deleteTodo($event)" (todoCheckbox)="Todotoggle($event)"></app-todo-app> 
+</div>
+</div>
+
+
+ 

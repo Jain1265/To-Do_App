@@ -1,0 +1,12 @@
+<div class="container my-3">
+    <!-- adding class attribute in js -->
+<h4 [ngClass] = "{'strike' : !todo.active}"> {{todo.title}}</h4>
+<p> {{todo.desc}}</p>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="onCheckBoxlick(todo)">
+    <label class="form-check-label" for="flexCheckDefault">
+      Mark as Done
+    </label>
+  </div>
+<button class="btn btn-danger" (click)="onclick(todo)">Delete</button>
+</div>
